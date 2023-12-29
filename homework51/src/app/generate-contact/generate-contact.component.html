@@ -1,0 +1,93 @@
+<div class="col-md-8 mx-auto mt-5 d-flex justify-content-between">
+  <form class="col-md-5" #myForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label class="col-md-12 form-label">Image:</label>
+      <input
+        name="input"
+        class="mb-3 form-control"
+        type="file"
+        placeholder="Enter your Image"
+        (change)="onFileUploadInputChange($event)"
+      />
+    </div>
+    <div>
+      <label class="form-label col-md-12">Name:</label>
+      <input
+        name="input1"
+        class="mb-3 form-control"
+        type="text"
+        placeholder="Enter your name"
+        [(ngModel)]="tmpContact.name"
+        required
+      />
+    </div>
+    <div>
+      <label class="form-label col-md-12">SurName:</label>
+      <input
+        name="input2"
+        class="mb-3 form-control"
+        type="text"
+        placeholder="Enter your surname"
+        [(ngModel)]="tmpContact.surname"
+      />
+    </div>
+    <div>
+      <label class="form-label col-md-12">Number:</label>
+      <input
+        name="input3"
+        class="mb-3 form-control"
+        type="text"
+        placeholder="Enter your number"
+        [(ngModel)]="tmpContact.number"
+        required
+      />
+    </div>
+    <div>
+      <label class="form-label col-md-12">Mail:</label>
+      <input
+        name="input4"
+        class="mb-3 form-control"
+        type="text"
+        placeholder="Enter your mail"
+        [(ngModel)]="tmpContact.mail"
+      />
+    </div>
+    <div>
+      <label class="form-label col-md-12">Adress:</label>
+      <input
+        name="input5"
+        class="mb-3 form-control"
+        type="text"
+        placeholder="Enter your address"
+        [(ngModel)]="tmpContact.address"
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!myForm.form.valid"
+      disabled
+    >
+      Save
+    </button>
+  </form>
+
+  <!-- card -->
+  <div *ngIf="contact" class="card col-md-6" style="width: 18rem; height: 100%">
+    <img
+      class="card-img-top"
+      style="height: 150px"
+      [src]="contact.image"
+      alt="araferi"
+    />
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ contact.name }}</li>
+      <li class="list-group-item">{{ contact.surname }}</li>
+      <li class="list-group-item">{{ contact.number }}</li>
+      <li class="list-group-item">{{ contact.mail }}</li>
+      <li class="list-group-item">{{ contact.address }}</li>
+    </ul>
+  </div>
+</div>
+<!--  სურათი, სახელი, გვარი, მობილურის ნომერი, ელ.ფოსტა , მისამართი -->
