@@ -74,20 +74,26 @@
   </form>
 
   <!-- card -->
-  <div *ngIf="contact" class="card col-md-6" style="width: 18rem; height: 100%">
-    <img
-      class="card-img-top"
-      style="height: 150px"
-      [src]="contact.image"
-      alt="araferi"
-    />
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{ contact.name }}</li>
-      <li class="list-group-item">{{ contact.surname }}</li>
-      <li class="list-group-item">{{ contact.number }}</li>
-      <li class="list-group-item">{{ contact.mail }}</li>
-      <li class="list-group-item">{{ contact.address }}</li>
-    </ul>
-  </div>
+  <ng-template [ngIf]="contacts">
+    <div
+      *ngFor="let cont of contacts"
+      class="card col-md-6"
+      style="width: 18rem; height: 100%"
+    >
+      <img
+        class="card-img-top"
+        style="height: 150px"
+        [src]="cont.image"
+        alt="araferi"
+      />
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ cont.name }}</li>
+        <li class="list-group-item">{{ cont.surname }}</li>
+        <li class="list-group-item">{{ cont.number }}</li>
+        <li class="list-group-item">{{ cont.mail }}</li>
+        <li class="list-group-item">{{ cont.address }}</li>
+      </ul>
+    </div>
+  </ng-template>
 </div>
 <!--  სურათი, სახელი, გვარი, მობილურის ნომერი, ელ.ფოსტა , მისამართი -->

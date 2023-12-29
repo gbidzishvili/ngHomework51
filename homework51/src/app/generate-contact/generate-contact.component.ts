@@ -13,7 +13,6 @@ export class GenerateContactComponent {
   contacts: Contact[] = [];
   onSubmit() {
     this.contacts.push(this.tmpContact);
-    console.log(this.contacts);
     this.contact = this.tmpContact;
     this.tmpContact = new Contact();
   }
