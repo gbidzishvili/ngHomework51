@@ -2,7 +2,7 @@ export class Contact {
   image!: string | undefined;
   name!: string;
   surname!: string;
-  number!: string;
+  number!: number | null;
   mail!: string;
   address!: string;
   //   [key: string]: any;
@@ -10,7 +10,7 @@ export class Contact {
     image = '',
     name = '',
     surname = '',
-    number = '',
+    number = null,
     mail = '',
     address = ''
   ) {
